@@ -1,0 +1,21 @@
+﻿@model CibertecSeminariosMVC.Models.Seminario
+
+<h2>Detalle del Seminario</h2>
+
+<img src="~/Images/@Model.FotoUrl" width="200" />
+
+<p><b>Curso:</b> @Model.NombreCurso</p>
+<p><b>Horario:</b> @Model.HorarioClase</p>
+<p><b>Capacidad:</b> @Model.Capacidad</p>
+
+@using (Html.BeginForm("Registrar", "Home", FormMethod.Post))
+{
+    @Html.Hidden("codigoSeminario", Model.CodigoSeminario)
+
+    <label>Código Estudiante:</label>
+    <input type="text" name="codigoEstudiante" required />
+
+    <br />
+    <br />
+    <button type="submit">Registrar</button>
+}
